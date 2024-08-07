@@ -1,0 +1,30 @@
+{
+  "name": "api_to_sql",
+  "version": "1.0.0",
+  "description": "takes response data from your specified API and inserts into mySQL database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhamjuyal/api_to_sql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shubhamjuyal/api_to_sql/issues"
+  },
+  "homepage": "https://github.com/shubhamjuyal/api_to_sql#readme",
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "axios": "^1.7.3",
+    "mysql2": "^3.11.0"
+  }
+}
