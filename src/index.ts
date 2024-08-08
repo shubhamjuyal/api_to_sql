@@ -39,6 +39,23 @@ const createTables = async (connection: any) => {
   await connection.execute(createExercisesTable);
 };
 
+const getConnection = async () => {
+  try {
+    var connection = await mysql.createConnection({
+      host: "",
+      port: 3306,
+      user: "webapp",
+      password: "",
+      database: "employee",
+    });
+    return connection;
+  } catch {
+    console.error(
+      "Error connecting to DB (check credentials and then try again)"
+    );
+  }
+};
+
 const insertData = async () => {
   const exercises = await fetchData();
 
@@ -47,14 +64,8 @@ const insertData = async () => {
     return;
   }
 
-  const connection = await mysql.createConnection({
-    host: "",
-    port: 3306,
-    user: "webapp",
-    password: "",
-    database: "employee",
-  });
-
+  var connection = await getConnection();
+  if (!connection) return;
   try {
     await connection.beginTransaction();
 
